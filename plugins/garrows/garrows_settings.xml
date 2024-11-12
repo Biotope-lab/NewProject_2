@@ -5,7 +5,7 @@
 		
 		remove_originalhotspots="true"
 
-		show_floatingarrow.desktop="true"
+		show_floatingarrow.desktop="false"
 		show_chevrons.desktop="true"
 		show_navpoints.desktop="false"
 
