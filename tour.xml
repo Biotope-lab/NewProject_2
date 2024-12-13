@@ -1,9 +1,10 @@
-<krpano version="1.20.11" title="Virtual Tour">
+﻿<krpano version="1.20.11" title="Virtual Tour">
 
 	<include url="skin/vtourskin.xml" />
 	<include url="biotope/biotopephoto.xml" />
+	<!--<include url="hdvr_view_copy/hdvr_view_copy.xml" /> -->
 	<include url="%SWFPATH%/add_hotspot/plugins_l/add_hotspot.xml" />
-	<!-- <include url="%SWFPATH%/add_hotspot/plugins_l/editor/add_hotspot_2.xml" /> -->
+	<!--<include url="%SWFPATH%/add_hotspot/plugins_l/editor/add_hotspot_2.xml" />-->
 
 	<!-- 인트로 이미지 추가 -->
 	<layer name="intro"
@@ -21,7 +22,7 @@
 		<layer name="intro_logo"
 			   enabled ="false"
 		       onclick="on_intro_click()"
-			 url="images/poster.png" align="center" y="20" scale="0.25"/>
+			 url="images/poster.jpg" align="center" y="20" scale="0.7"/>
 
 	</layer>
 
@@ -127,8 +128,8 @@
 
 		<!-- *** add hotspt *** -->
 
-	<include url="%FIRSTXML%/add_hotspot/plugins_l/plugin_a/photo.xml"/>
 	<include url="%FIRSTXML%/add_hotspot/plugins_l/plugin_a/poligon.xml"/>
+	<include url="%FIRSTXML%/add_hotspot/plugins_l/plugin_a/photo.xml"/>
 
 <scene name="scene_1" title="1" onstart="show_logo('logo_1'); hide_logo('logo_2'); hide_logo('logo_3');" thumburl="panos/1.tiles/thumb.jpg" lat="" lng="" heading="">
 		
@@ -145,24 +146,27 @@
 
 
 		
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-46.845" atv="26.565" linkedscene="scene_1_1" />
-		
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-46.845" atv="26.565"
+			onclick="loadscene(scene_1_1, null, null, BLEND(0.5)); delayedcall(0.01, lookto(31.64, 14.39, 124.05));" />
 
-	
-		<hotspot name="hsp_0_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/1_0.png);" url="%FIRSTXML%/add_hotspot/picture/info.png" alpha="0" ath="3.1233" atv="14.1501" install_onclick="6" phot_h="80" info_ah="1_0.png" />
+
+
+	<hotspot name="hsp_0_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/1_0.png);" url="%FIRSTXML%/add_hotspot/picture/info.png" alpha="0" ath="3.1233" atv="14.1501" install_onclick="6" phot_h="80" info_ah="1_0.png" />
 		<hotspot name="hsp_0_2" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_0_1], onclick); " alpha="0" alpha2="0" fillcolor="0xE80606" fillalpha="0.69" bordercolor="0xFFEE00" title="판넬보기" >
 			<point ath="38.7695" atv="17.4294" /> 
 			<point ath="29.0539" atv="6.6123" /> 
 			<point ath="-22.2568" atv="6.8579" /> 
 			<point ath="-30.5401" atv="18.3548" /> 
 		</hotspot>
+	
+		<hotspot name="hsp_0_3" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.5" ath="20.2373" atv="16.1978" install_onclick="5" />
 	</scene>
 
 	<scene name="scene_1_1" title="1_1" onstart="show_logo('logo_1'); hide_logo('logo_2'); hide_logo('logo_3');" thumburl="panos/1_1.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="true" />
 
-		<view hlookat="-11.171" vlookat="16.439" fovtype="MFOV" fov="130.0" maxpixelzoom="2.0" fovmin="42.002774" fovmax="130.0" limitview="auto" hlookatmin="-180.0" hlookatmax="180.0" vlookatmin="-90.0" vlookatmax="90.0"/>
+		<view hlookat="31.64" vlookat="14.39" fovtype="MFOV" fov="124.05" maxpixelzoom="2.0" fovmin="42.002774" fovmax="130.0" limitview="auto" hlookatmin="-180.0" hlookatmax="180.0" vlookatmin="-90.0" vlookatmax="90.0"/>
 
 
 
@@ -171,10 +175,13 @@
 		<image prealign="-2.143103|-0.09489|-3.922192">
 			<cube url="panos/1_1.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="139.308" atv="53.975" linkedscene="scene_1" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="-43.528" atv="49.307" linkedscene="scene_1_2" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="139.308" atv="53.975"
+		onclick="loadscene(scene_1, null, null, BLEND(0.5)); delayedcall(0.01, lookto(1.26, 6.98, 121.35));" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-43.528" atv="49.307"
+		onclick="loadscene(scene_1_2, null, null, BLEND(0.5)); delayedcall(0.01, lookto(-0.60, 42.05, 123.98));" />
 
-	
+
+
 		<hotspot name="hsp_1_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/1_1_0.png);" url="%FIRSTXML%/add_hotspot/picture/info.png" scale="0.8" alpha="0" ath="27.9683" atv="19.9463" install_onclick="6" phot_h="80" info_ah="1_1_0.png" />
 		<hotspot name="hsp_1_2" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_1_1], onclick);  " alpha="0" alpha2="0" title="판넬보기" >
 			<point ath="-5.3859" atv="22.9701" /> 
@@ -189,23 +196,29 @@
 			<point ath="11.2496" atv="10.6424" /> 
 			<point ath="5.9890" atv="10.1942" /> 
 		</hotspot>
+	
+		<hotspot name="hsp_1_3" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.5" zorder="-100" ath="46.4108" atv="23.5004" install_onclick="5" />
 	</scene>
 
 	<scene name="scene_1_2" title="1_2" onstart="show_logo('logo_1'); hide_logo('logo_2'); hide_logo('logo_3');" thumburl="panos/1_2.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
-		<view hlookat="-0.654" vlookat="48.058" fovtype="MFOV" fov="117.240" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+		<view hlookat="-0.60" vlookat="42.05" fovtype="MFOV" fov="123.98" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
 		<preview url="panos/1_2.tiles/preview.jpg" />
 
 		<image>
 			<cube url="panos/1_2.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-78.572" atv="46.049" linkedscene="scene_1_4" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="73.855" atv="53.512" linkedscene="scene_1_1" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-78.572" atv="46.049" 
+		onclick="loadscene(scene_1_4, null, null, BLEND(0.5)); delayedcall(0.01, lookto(0.46, 33.33, 123.98));" />
 
-	
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="73.855" atv="53.512" 
+			onclick="loadscene(scene_1_1, null, null, BLEND(0.5)); delayedcall(0.01, lookto(31.64, 14.39, 124.05));" />
+
+
+
 		<hotspot name="hsp_2_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/1_2_0.png);" url="%FIRSTXML%/add_hotspot/picture/info.png" alpha="0" ath="5.5710" atv="44.4290" install_onclick="6" phot_h="80" info_ah="1_2_0.png" />
 		<hotspot name="hsp_2_3" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/1_2_1.png);" url="%FIRSTXML%/add_hotspot/picture/info.png" alpha="0" ath="1.5210" atv="-15.1730" install_onclick="6" phot_h="80" info_ah="1_2_1.png" />
 		<hotspot name="hsp_2_5" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/1_2_2.png);" url="%FIRSTXML%/add_hotspot/picture/info.png" scale="0.3" alpha="0" ath="-24.0450" atv="20.0600" install_onclick="6" phot_h="80" info_ah="1_2_2.png" />
@@ -249,39 +262,32 @@
 			<point ath="40.3524" atv="14.2594" /> 
 			<point ath="39.9584" atv="4.9197" /> 
 		</hotspot>
+	
+		<hotspot name="hsp_2_7" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.500" zorder="-100" ath="40.9345" atv="45.6206" install_onclick="5" />
+		<hotspot name="hsp_2_10" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.500" zorder="-100" ath="-24.1231" atv="12.6443" install_onclick="5" />
+		<hotspot name="hsp_2_11" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.500" zorder="-100" ath="34.0920" atv="10.8390" install_onclick="5" />
+		<hotspot name="hsp_2_12" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.500" zorder="-100" ath="2.5692" atv="-19.1135" install_onclick="5" />
 	</scene>
 
-	<scene name="scene_1_3" title="1_3" onstart="show_logo('logo_1'); hide_logo('logo_2'); hide_logo('logo_3');" thumburl="panos/1_3.tiles/thumb.jpg" lat="" lng="" heading="">
-		
-		<control bouncinglimits="calc:image.cube ? true : false" />
-
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
-
-		<preview url="panos/1_3.tiles/preview.jpg" />
-
-		<image>
-			<cube url="panos/1_3.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
-		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-56.628" atv="31.900" linkedscene="scene_1_4" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="49.191" atv="33.133" linkedscene="scene_1_2" />
-
-	</scene>
-
+	
 	<scene name="scene_1_4" title="1_4" onstart="show_logo('logo_1'); hide_logo('logo_2'); hide_logo('logo_3');" thumburl="panos/1_4.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
-		<view hlookat="1.441" vlookat="0.962" fovtype="MFOV" fov="142.300" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+		<view hlookat="0.46" vlookat="33.33" fovtype="MFOV" fov="123.98" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
 		<preview url="panos/1_4.tiles/preview.jpg" />
 
 		<image prealign="0|0|0">
 			<cube url="panos/1_4.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="179.649" atv="42.717" linkedscene="scene_1_5" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="91.793" atv="44.128" linkedscene="scene_1_2" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="179.649" atv="42.717" 
+		onclick="loadscene(scene_1_5, null, null, BLEND(0.5)); delayedcall(0.01, lookto(25.13,7.30,131.48));" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="91.793" atv="44.128" 
+		onclick="loadscene(scene_1_2, null, null, BLEND(0.5)); delayedcall(0.01, lookto(-0.60, 42.05, 123.98));" />
 
-	
+
+
 		<hotspot name="hsp_4_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/1_4_0.png);" url="%FIRSTXML%/add_hotspot/picture/info.png" scale="0.5" alpha="0" ath="3.3020" atv="44.4201" install_onclick="6" info_ah="1_4_0.png" phot_h="80" />
 		<hotspot name="hsp_4_3" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/1_4_1.png);" url="%FIRSTXML%/add_hotspot/picture/info.png" scale="0.5" alpha="0" ath="-7.1923" atv="8.5132" install_onclick="6" info_ah="1_4_1.png" phot_h="80" />
 		<hotspot name="hsp_4_2" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_4_1], onclick);       " alpha="0" alpha2="0" title="판넬보기1" >
@@ -296,29 +302,34 @@
 			<point ath="-37.8717" atv="17.3676" /> 
 			<point ath="30.5431" atv="17.9415" /> 
 		</hotspot>
+	
+		<hotspot name="hsp_3_1" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.500" zorder="-100" ath="41.7353" atv="40.6512" install_onclick="5" />
+		<hotspot name="hsp_3_2" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.500" zorder="-100" ath="-15.1849" atv="14.7467" install_onclick="5" />
 	</scene>
 
 	<scene name="scene_1_5" title="1_5" onstart="hide_logo('logo_1'); show_logo('logo_2'); hide_logo('logo_3');" thumburl="panos/1_5.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="true" />
 
-		<view hlookat="386.484" vlookat="0.000" fovtype="MFOV" fov="142.3" maxpixelzoom="2.0" fovmin="42.002774" fovmax="142.3" limitview="auto" hlookatmin="-180.0" hlookatmax="180.0" vlookatmin="-90.0" vlookatmax="90.0"/>
+		<view hlookat="25.13" vlookat="7.30" fovtype="MFOV" fov="131.48" maxpixelzoom="2.0" fovmin="42.002774" fovmax="142.3" limitview="auto" hlookatmin="-180.0" hlookatmax="180.0" vlookatmin="-90.0" vlookatmax="90.0"/>
 
 		<preview url="panos/1_5.tiles/preview.jpg" />
 
 		<image prealign="-0.247179|-0.001179|-0.546722">
 			<cube url="panos/1_5.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-65.592" atv="35.387" linkedscene="scene_1_6" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="114.898" atv="26.486" linkedscene="scene_1_4" />
-		<hotspot name="spot3" style="skin_hotspotstyle" ath="-155.901" atv="27.063" linkedscene="scene_1_1" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-65.592" atv="35.387" 
+		onclick="loadscene(scene_1_6, null, null, BLEND(0.5)); delayedcall(0.01, lookto(-2.82,44.32,127.85));" />
+
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="114.898" atv="26.486" 
+		onclick="loadscene(scene_1_4, null, null, BLEND(0.5)); delayedcall(0.01, lookto(0.46, 33.33, 123.98));" />
+
+		
 
 	
 		<hotspot name="hsp_5_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/1_5_0.png);" url="%FIRSTXML%/add_hotspot/picture/info.png" scale="0.5" alpha="0" ath="25.5992" atv="28.8002" install_onclick="6" phot_h="80" info_ah="1_5_0.png" />
 		<hotspot name="hsp_5_2" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_5_1], onclick); " alpha="0" alpha2="0" title="판넬보기" >
 			<point ath="-23.4117" atv="15.8847" /> 
-			<point ath="-22.8742" atv="37.6744" /> 
-			<point ath="76.3666" atv="35.7643" /> 
 			<point ath="76.1116" atv="14.3905" /> 
 			<point ath="72.8865" atv="13.4845" /> 
 			<point ath="71.8147" atv="10.9156" /> 
@@ -346,31 +357,38 @@
 			<point ath="-18.2325" atv="8.0220" /> 
 			<point ath="-17.7951" atv="15.0121" /> 
 		</hotspot>
+	
+		<hotspot name="hsp_4_5" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.5" zorder="-100" ath="25.8701" atv="-6.6802" install_onclick="5" />
 	</scene>
 
 	<scene name="scene_1_6" title="1_6" onstart="hide_logo('logo_1'); show_logo('logo_2'); hide_logo('logo_3');" thumburl="panos/1_6.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="true" />
 
-		<view hlookat="-1.656" vlookat="12.044" fovtype="MFOV" fov="142.3" maxpixelzoom="2.0" fovmin="42.002774" fovmax="142.3" limitview="auto" hlookatmin="-180.0" hlookatmax="180.0" vlookatmin="-90.0" vlookatmax="90.0"/>
+		<view hlookat="-2.82" vlookat="44.32" fovtype="MFOV" fov="127.85" maxpixelzoom="2.0" fovmin="42.002774" fovmax="142.3" limitview="auto" hlookatmin="-180.0" hlookatmax="180.0" vlookatmin="-90.0" vlookatmax="90.0"/>
 
 		<preview url="panos/1_6.tiles/preview.jpg" />
 
 		<image prealign="17.436223|0.059927|0.10917">
 			<cube url="panos/1_6.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-1.950" atv="74.757" linkedscene="scene_1_7" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="176.931" atv="31.950" linkedscene="scene_1_5" />
-		<hotspot name="spot3" style="skin_hotspotstyle" ath="85.917" atv="34.714" linkedscene="scene_1_8" />
-		
-		
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-1.950" atv="74.757" 
+		onclick="loadscene(scene_1_7, null, null, BLEND(0.5)); delayedcall(0.01, lookto(0.48,36.50,127.90));" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="176.931" atv="31.950" 
+		onclick="loadscene(scene_1_5, null, null, BLEND(0.5)); delayedcall(0.01, lookto(25.13,7.30,131.48));" />
 
-	
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="85.917" atv="34.714"
+		onclick="loadscene(scene_1_8, null, null, BLEND(0.5)); delayedcall(0.01, lookto(-64.98,30.28,121.30));" />
+
+
+
+
+
 		<hotspot name="hsp_6_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/1_6_0.png);" url="%FIRSTXML%/add_hotspot/picture/info.png" scale="0.5" alpha="0" ath="-25.1556" atv="36.9935" install_onclick="6" info_ah="1_6_0.png" phot_h="80" />
-		<hotspot name="hsp_6_2" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_6_1], onclick);       " alpha="0" alpha2="0" title="판넬보기1" >
+		<hotspot name="hsp_6_2" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_6_1], onclick);       " alpha="0" alpha2="0" fillalpha="0.5081255856009368" title="판넬보기1" >
 			<point ath="-35.2414" atv="14.0364" /> 
-			<point ath="-64.8148" atv="34.3283" /> 
-			<point ath="48.5985" atv="42.2417" /> 
+			<point ath="-54.0636" atv="28.3477" /> 
+			<point ath="36.2881" atv="34.3741" /> 
 			<point ath="19.6440" atv="14.9700" /> 
 		</hotspot>
 	
@@ -383,22 +401,27 @@
 			<point ath="55.1223" atv="23.1945" /> 
 			<point ath="55.0432" atv="3.4441" /> 
 		</hotspot>
+	
+		<hotspot name="hsp_5_3" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.5" zorder="-100" ath="9.9949" atv="21.5906" install_onclick="5" />
+		<hotspot name="hsp_5_4" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.5" zorder="-100" ath="44.4853" atv="14.9614" install_onclick="5" />
 	</scene>
 
 	<scene name="scene_1_7" title="1_7" onstart="hide_logo('logo_1'); show_logo('logo_2'); hide_logo('logo_3');" thumburl="panos/1_7.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+		<view hlookat="0.48" vlookat="36.50" fovtype="MFOV" fov="127.90" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
 		<preview url="panos/1_7.tiles/preview.jpg" />
 
 		<image>
 			<cube url="panos/1_7.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-0.072" atv="19.342" linkedscene="scene_1_6" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-0.072" atv="19.342" 
+		onclick="loadscene(scene_1_6, null, null, BLEND(0.5)); delayedcall(0.01, lookto(-2.82,44.32,127.85));" />
 
-	
+
+
 		<hotspot name="hsp_7_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/1_7_0.png);" url="%FIRSTXML%/add_hotspot/picture/info.png" scale="0.4" alpha="0" ath="-3.7129" atv="41.3858" install_onclick="6" info_ah="1_7_0.png" phot_h="80" />
 		<hotspot name="hsp_7_2" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_7_1], onclick);       " alpha="0" alpha2="0" title="판넬보기" >
 			<point ath="-47.5182" atv="23.8970" /> 
@@ -406,24 +429,29 @@
 			<point ath="74.1125" atv="18.1413" /> 
 			<point ath="60.4725" atv="16.9712" /> 
 		</hotspot>
+	
+		<hotspot name="hsp_6_5" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.5" zorder="-100" ath="18.2386" atv="42.6305" install_onclick="5" />
 	</scene>
 
 	<scene name="scene_1_8" title="1_8" onstart="hide_logo('logo_1'); show_logo('logo_2'); hide_logo('logo_3');" thumburl="panos/1_8.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="true" />
 
-		<view hlookat="655.885" vlookat="0.000" fovtype="MFOV" fov="142.300" maxpixelzoom="2.0" fovmin="42.002774" fovmax="142.3" limitview="auto" hlookatmin="-180.0" hlookatmax="180.0" vlookatmin="-90.0" vlookatmax="90.0"/>
+		<view hlookat="-64.98" vlookat="30.28" fovtype="MFOV" fov="121.30" maxpixelzoom="2.0" fovmin="42.002774" fovmax="142.3" limitview="auto" hlookatmin="-180.0" hlookatmax="180.0" vlookatmin="-90.0" vlookatmax="90.0"/>
 
 		<preview url="panos/1_8.tiles/preview.jpg" />
 
 		<image prealign="0|0|0">
 			<cube url="panos/1_8.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-2.049" atv="31.788" linkedscene="scene_1_6" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="-164.577" atv="41.891" linkedscene="scene_1_9" />
-		
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-2.049" atv="31.788" 
+		onclick="loadscene(scene_1_6, null, null, BLEND(0.5)); delayedcall(0.01, lookto(-2.82,44.32,127.85));" />
 
-	
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-164.577" atv="41.891" 
+		onclick="loadscene(scene_1_9, null, null, BLEND(0.5)); delayedcall(0.01, lookto(-0.19,36.19,121.25));" />
+
+
+
 		<hotspot name="hsp_8_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/1_8_0.png);" url="%FIRSTXML%/add_hotspot/picture/info.png" scale="0.5" alpha="0" ath="-64.1124" atv="33.6663" install_onclick="6" phot_h="80" info_ah="1_8_0.png" />
 		<hotspot name="hsp_8_2" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_8_1], onclick);   " alpha="0" alpha2="0" title="판넬보기" >
 			<point ath="-92.2075" atv="12.6705" /> 
@@ -431,23 +459,28 @@
 			<point ath="-19.5119" atv="35.9259" /> 
 			<point ath="-42.6554" atv="13.4890" /> 
 		</hotspot>
+	
+		<hotspot name="hsp_7_3" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.5" zorder="-100" ath="-58.0627" atv="20.7789" install_onclick="5" />
 	</scene>
 
 	<scene name="scene_1_9" title="1_9" onstart="hide_logo('logo_1'); show_logo('logo_2'); hide_logo('logo_3');" thumburl="panos/1_9.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
-		<view hlookat="-356.903" vlookat="21.581" fovtype="MFOV" fov="140.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+		<view hlookat="-0.19" vlookat="36.19" fovtype="MFOV" fov="121.25" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
 		<preview url="panos/1_9.tiles/preview.jpg" />
 
 		<image>
 			<cube url="panos/1_9.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="93.594" atv="50.572" linkedscene="scene_1_8" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="-90.031" atv="46.253" linkedscene="scene_1_10" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="93.594" atv="50.572" 
+		onclick="loadscene(scene_1_8, null, null, BLEND(0.5)); delayedcall(0.01, lookto(-64.98,30.28,121.30));" />
 
-	
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-90.031" atv="46.253" 
+		onclick="loadscene(scene_1_10, null, null, BLEND(0.5)); delayedcall(0.01, lookto(-1.06,3.05,103.75));" />
+
+
 		<hotspot name="hsp_9_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/1_9_0.png);" url="%FIRSTXML%/add_hotspot/picture/info.png" scale="0.4" alpha="0" ath="1.7467" atv="28.6503" install_onclick="6" phot_h="80" info_ah="1_9_0.png" />
 		<hotspot name="hsp_9_2" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_9_1], onclick);       " alpha="0" alpha2="0" title="판넬보기" >
 			<point ath="-41.8542" atv="7.4856" /> 
@@ -455,23 +488,29 @@
 			<point ath="64.3317" atv="27.1135" /> 
 			<point ath="-67.5548" atv="22.2923" /> 
 		</hotspot>
+	
+		<hotspot name="hsp_8_3" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.5" zorder="-100" ath="14.6579" atv="33.7958" install_onclick="5" />
 	</scene>
 
 	<scene name="scene_1_10" title="1_10" onstart="hide_logo('logo_1'); show_logo('logo_2'); hide_logo('logo_3');" thumburl="panos/1_10.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="true" />
 
-		<view hlookat="1079.590" vlookat="0.000" fovtype="MFOV" fov="139.280828" maxpixelzoom="2.0" fovmin="42.002774" fovmax="142.3" limitview="auto" hlookatmin="-180.0" hlookatmax="180.0" vlookatmin="-90.0" vlookatmax="90.0"/>
+		<view hlookat="-1.06" vlookat="3.05" fovtype="MFOV" fov="103.75" maxpixelzoom="2.0" fovmin="42.002774" fovmax="142.3" limitview="auto" hlookatmin="-180.0" hlookatmax="180.0" vlookatmin="-90.0" vlookatmax="90.0"/>
 
 		<preview url="panos/1_10.tiles/preview.jpg" />
 
 		<image prealign="0|0|0">
 			<cube url="panos/1_10.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-102.422" atv="46.753" linkedscene="scene_1_11" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="94.093" atv="45.490" linkedscene="scene_1_9" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-93.636" atv="68.981" 
+		onclick="loadscene(scene_1_11, null, null, BLEND(0.5)); delayedcall(0.01, lookto(-2.58,25.35,125.25));" />
 
-	
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="86.889" atv="61.74" 
+		onclick="loadscene(scene_1_9, null, null, BLEND(0.5)); delayedcall(0.01, lookto(-0.19,36.19,121.25));" />
+
+
+
 		<hotspot name="hsp_10_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/1_10_0.png);" url="%FIRSTXML%/add_hotspot/picture/info.png" scale="0.2" alpha="0" ath="4.0373" atv="4.3617" install_onclick="6" phot_h="80" info_ah="1_10_0.png" />
 		<hotspot name="hsp_10_2" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_10_1], onclick);       " alpha="0" alpha2="0" fillcolor="0xE80606" fillalpha="0.69" bordercolor="0xFFEE00" title="판넬보기1" >
 			<point ath="-12.5174" atv="-16.1327" /> 
@@ -491,24 +530,30 @@
 			<point ath="-22.3035" atv="-0.9810" /> 
 			<point ath="-22.1691" atv="-10.5130" /> 
 		</hotspot>
+	
+		<hotspot name="hsp_9_3" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.5" zorder="-100" ath="13.4467" atv="-4.1501" install_onclick="5" />
+		<hotspot name="hsp_9_4" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.5" zorder="-100" ath="-24.5728" atv="0.7755" install_onclick="5" />
 	</scene>
 
 	<scene name="scene_1_11" title="1_11" onstart="hide_logo('logo_1'); show_logo('logo_2'); hide_logo('logo_3');" thumburl="panos/1_11.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
-		<view hlookat="358.864" vlookat="1.061" fovtype="MFOV" fov="142.333" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+		<view hlookat="-2.58" vlookat="25.35" fovtype="MFOV" fov="125.25" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
 		<preview url="panos/1_11.tiles/preview.jpg" />
 
 		<image prealign="-0.00266|0.000048|2.049998">
 			<cube url="panos/1_11.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="85.473" atv="42.173" linkedscene="scene_1_10" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="-91.382" atv="46.968" linkedscene="scene_1_12" />
-		<hotspot name="spot3" style="skin_hotspotstyle" ath="173.498" atv="25.169" linkedscene="scene_1_14" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="85.473" atv="42.173" 
+		onclick="loadscene(scene_1_10, null, null, BLEND(0.5)); delayedcall(0.01, lookto(-1.06,3.05,103.75));" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-91.382" atv="46.968" 
+		onclick="loadscene(scene_1_12, null, null, BLEND(0.5)); delayedcall(0.01, lookto(-6.19,12.92,129.05));" />
 
-	
+
+
+
 		<hotspot name="hsp_11_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/1_11_0.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.2" alpha="0" ath="10.7363" atv="6.1461" install_onclick="6" phot_h="80" info_ah="1_11_0.png" />
 		<hotspot name="hsp_11_3" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/1_11_1.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.3" alpha="0" ath="-22.1957" atv="10.3261" install_onclick="6" phot_h="80" info_ah="1_11_1.png" />
 		<hotspot name="hsp_11_5" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/1_11_2.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.5" alpha="0" ath="-0.1763" atv="37.6215" install_onclick="6" phot_h="80" info_ah="1_11_2.png" />
@@ -530,23 +575,30 @@
 			<point ath="78.1158" atv="14.7652" /> 
 			<point ath="54.4063" atv="13.6566" /> 
 		</hotspot>
+	
+		<hotspot name="hsp_10_3" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.5" zorder="-100" ath="-2.5798" atv="44.5394" install_onclick="5" />
+		<hotspot name="hsp_10_6" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.5" zorder="-100" ath="7.8111" atv="1.9364" install_onclick="5" />
+		<hotspot name="hsp_10_7" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.5" zorder="-100" ath="-22.9827" atv="16.4014" install_onclick="5" />
 	</scene>
 
 	<scene name="scene_1_12" title="1_12" onstart="hide_logo('logo_1'); show_logo('logo_2'); hide_logo('logo_3');" thumburl="panos/1_12.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
-		<view hlookat="0.001" vlookat="0.000" fovtype="MFOV" fov="141.370" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+		<view hlookat="-6.19" vlookat="12.92" fovtype="MFOV" fov="129.05" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
 		<preview url="panos/1_12.tiles/preview.jpg" />
 
 		<image>
 			<cube url="panos/1_12.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-96.226" atv="35.462" linkedscene="scene_1_13" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="145.647" atv="44.372" linkedscene="scene_1_11" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-96.226" atv="35.462"
+		onclick="loadscene(scene_1_13, null, null, BLEND(0.5)); delayedcall(0.01, lookto(-6.67,3.95,132.74));" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="145.647" atv="44.372" 
+		onclick="loadscene(scene_1_11, null, null, BLEND(0.5)); delayedcall(0.01, lookto(-2.58,25.35,125.25));" />
 
-	
+
+
 		<hotspot name="hsp_12_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/1_12_0.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.5" alpha="0" ath="97.3968" atv="-0.3407" install_onclick="6" phot_h="80" info_ah="1_12_0.png" />
 		<hotspot name="hsp_12_3" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/1_12_1.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.2" alpha="0" ath="-0.5812" atv="34.8833" install_onclick="6" info_ah="1_12_1.png" phot_h="80" />
 		<hotspot name="hsp_12_5" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/1_12_2.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.2" alpha="0" ath="-0.4628" atv="-4.3249" install_onclick="6" phot_h="80" info_ah="1_12_2.png" />
@@ -559,8 +611,8 @@
 		</hotspot>
 		<hotspot name="hsp_12_4" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_12_3], onclick);       " alpha="0" alpha2="0" fillcolor="0xE80606" fillalpha="0.69" bordercolor="0xFFEE00" title="판넬보기1" >
 			<point ath="-43.4292" atv="9.5172" /> 
-			<point ath="-72.5082" atv="23.8619" /> 
-			<point ath="65.3837" atv="31.1387" /> 
+			<point ath="-61.3153" atv="19.1548" /> 
+			<point ath="55.2366" atv="26.0738" /> 
 			<point ath="35.9138" atv="13.5464" /> 
 		</hotspot>
 		<hotspot name="hsp_12_6" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_12_5], onclick);       " alpha="0" alpha2="0" title="판넬보기2" >
@@ -570,24 +622,32 @@
 			<point ath="38.4973" atv="12.9474" /> 
 			<point ath="38.8686" atv="-13.2455" /> 
 		</hotspot>
+	
+		<hotspot name="hsp_11_8" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.5" zorder="-100" ath="-9.1616" atv="23.7908" install_onclick="5" />
+		<hotspot name="hsp_11_7" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.500" zorder="-100" ath="97.1432" atv="0.1506" install_onclick="5" />
+		<hotspot name="hsp_11_9" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.5" zorder="-100" ath="-24.4180" atv="-13.7903" install_onclick="5" />
 	</scene>
 
 	<scene name="scene_1_13" title="1_13" onstart="hide_logo('logo_1'); show_logo('logo_2'); hide_logo('logo_3');" thumburl="panos/1_13.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="true" />
 
-		<view hlookat="1074.284" vlookat="0.000" fovtype="MFOV" fov="142.3" maxpixelzoom="2.0" fovmin="42.002774" fovmax="142.3" limitview="auto" hlookatmin="-180.0" hlookatmax="180.0" vlookatmin="-90.0" vlookatmax="90.0"/>
+		<view hlookat="-6.67" vlookat="3.95" fovtype="MFOV" fov="132.74" maxpixelzoom="2.0" fovmin="42.002774" fovmax="142.3" limitview="auto" hlookatmin="-180.0" hlookatmax="180.0" vlookatmin="-90.0" vlookatmax="90.0"/>
 
 		<preview url="panos/1_13.tiles/preview.jpg" />
 
 		<image prealign="1.054972|-8.609227|-1.957379">
 			<cube url="panos/1_13.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="66.197" atv="43.581" linkedscene="scene_1_12" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="-141.866" atv="27.927" linkedscene="scene_1_14" />
-		<hotspot name="spot3" style="skin_hotspotstyle" ath="-83.344" atv="32.209" linkedscene="scene_1_18" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="66.197" atv="43.581" 
+		onclick="loadscene(scene_1_12, null, null, BLEND(0.5)); delayedcall(0.01, lookto(-6.19,12.92,129.05));" />
 
-	
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-141.866" atv="27.927" 
+		onclick="loadscene(scene_1_14, null, null, BLEND(0.5)); delayedcall(0.01, lookto(7.46,36.64,125.38));" />
+
+		
+
+
 		<hotspot name="hsp_13_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/1_13_0.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.5" alpha="0.00" ath="2.3180" atv="17.5167" install_onclick="6" info_ah="1_13_0.png" phot_h="80" />
 		<hotspot name="hsp_13_2" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_13_1], onclick);       " alpha="0" alpha2="0" title="판넬보기" >
 			<point ath="-0.8428" atv="-51.5383" /> 
@@ -596,49 +656,59 @@
 			<point ath="46.1302" atv="34.1844" /> 
 			<point ath="48.1640" atv="-16.0279" /> 
 		</hotspot>
+	
+		<hotspot name="hsp_12_7" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.5" zorder="-100" ath="-20.4246" atv="15.9882" install_onclick="5" />
 	</scene>
 
 	<scene name="scene_1_14" title="1_14" onstart="hide_logo('logo_1'); show_logo('logo_2'); hide_logo('logo_3');" thumburl="panos/1_14.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="true" />
 
-		<view hlookat="7.021" vlookat="5.843" fovtype="MFOV" fov="135.013262" maxpixelzoom="2.0" fovmin="42.002774" fovmax="142.3" limitview="range" hlookatmin="-180.0" hlookatmax="180.0" vlookatmin="-90.0" vlookatmax="90.0"/>
+		<view hlookat="7.46" vlookat="36.64" fovtype="MFOV" fov="125.38" maxpixelzoom="2.0" fovmin="42.002774" fovmax="142.3" limitview="range" hlookatmin="-180.0" hlookatmax="180.0" vlookatmin="-90.0" vlookatmax="90.0"/>
 
 		<preview url="panos/1_14.tiles/preview.jpg" />
 
 		<image prealign="21.668018|0.879701|-2.844919">
 			<cube url="panos/1_14.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="6.878" atv="75.094" linkedscene="scene_1_17" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="102.492" atv="59.742" linkedscene="scene_1_15" />
-		<hotspot name="spot3" style="skin_hotspotstyle" ath="-91.162" atv="59.149" linkedscene="scene_1_13" />
+		
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="102.583" atv="59.64" 
+		onclick="loadscene(scene_1_15, null, null, BLEND(0.5)); delayedcall(0.01, lookto(-0.12,34.62,129.18));" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="-178.988" atv="52.788" 
+		onclick="loadscene(scene_1_18, null, null, BLEND(0.5)); delayedcall(0.01, lookto(0.70,7.22,136.81));" />
 
-	
-		<hotspot name="hsp_14_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/1_14_0.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.2" alpha="0" ath="5.0286" atv="41.9654" install_onclick="6" phot_h="80" info_ah="1_14_0.png" />
+
+
+		<hotspot name="hsp_14_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/1_14_0.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.2" alpha="0" ath="5.029" atv="41.965" install_onclick="6" phot_h="80" info_ah="1_14_0.png" />
 		<hotspot name="hsp_14_2" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_14_1], onclick);       " alpha="0" alpha2="0" title="판넬보기" >
-			<point ath="-28.3767" atv="20.3568" /> 
+			<point ath="0.0" atv="0.0" /> 
 			<point ath="-60.5467" atv="36.9955" /> 
 			<point ath="66.1556" atv="37.0660" /> 
 			<point ath="39.0821" atv="22.1065" /> 
 		</hotspot>
+	
+		<hotspot name="hsp_13_3" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.5" zorder="-100" ath="-10.094" atv="41.907" install_onclick="5" />
 	</scene>
 
 	<scene name="scene_1_15" title="1_15" onstart="hide_logo('logo_1'); show_logo('logo_2'); hide_logo('logo_3');" thumburl="panos/1_15.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="true" />
 
-		<view hlookat="719.846" vlookat="0.000" fovtype="MFOV" fov="139.280828" maxpixelzoom="2.0" fovmin="42.002774" fovmax="142.3" limitview="auto" hlookatmin="-180.0" hlookatmax="180.0" vlookatmin="-90.0" vlookatmax="90.0"/>
+		<view hlookat="-0.12" vlookat="34.62" fovtype="MFOV" fov="129.18" maxpixelzoom="2.0" fovmin="42.002774" fovmax="142.3" limitview="auto" hlookatmin="-180.0" hlookatmax="180.0" vlookatmin="-90.0" vlookatmax="90.0"/>
 
 		<preview url="panos/1_15.tiles/preview.jpg" />
 
 		<image prealign="0|0|0">
 			<cube url="panos/1_15.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="2.771" atv="77.435" linkedscene="scene_1_16" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="-91.167" atv="52.911" linkedscene="scene_1_14" />
-		<hotspot name="spot3" style="skin_hotspotstyle" ath="-175.051" atv="20.507" linkedscene="scene_1_18" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="2.771" atv="77.435"
+		onclick="loadscene(scene_1_16, null, null, BLEND(0.5)); delayedcall(0.01, lookto(-0.78,25.70,121.49));" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-91.167" atv="52.911"
+		onclick="loadscene(scene_1_14, null, null, BLEND(0.5)); delayedcall(0.01, lookto(7.46,36.64,125.38));" />
 
-	
+
+
+
 		<hotspot name="hsp_15_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/1_15_0.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.4" alpha="0" ath="7.1403" atv="34.0883" install_onclick="6" info_ah="1_15_0.png" phot_h="80" />
 		<hotspot name="hsp_15_2" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_15_1], onclick);       " alpha="0" alpha2="0" fillcolor="0xE80606" fillalpha="0.69" bordercolor="0xFFEE00" title="판넬보기" >
 			<point ath="-32.3044" atv="12.4418" /> 
@@ -646,23 +716,29 @@
 			<point ath="70.5418" atv="24.0017" /> 
 			<point ath="39.1046" atv="9.7574" /> 
 		</hotspot>
+	
+		<hotspot name="hsp_14_3" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.5" zorder="-100" ath="-18.1593" atv="39.5553" install_onclick="5" />
 	</scene>
 
 	<scene name="scene_1_16" title="1_16" onstart="hide_logo('logo_1'); show_logo('logo_2'); hide_logo('logo_3');" thumburl="panos/1_16.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+		<view hlookat="-0.78" vlookat="25.70" fovtype="MFOV" fov="121.49" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
 		<preview url="panos/1_16.tiles/preview.jpg" />
 
 		<image>
 			<cube url="panos/1_16.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-2.724" atv="54.850" linkedscene="scene_1_15" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="94.183" atv="50.845" linkedscene="scene_1_17" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-2.724" atv="54.850" 
+		onclick="loadscene(scene_1_15, null, null, BLEND(0.5)); delayedcall(0.01, lookto(-0.12,34.62,129.18));" />
 
-	
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="94.183" atv="50.845" 
+		onclick="loadscene(scene_1_17, null, null, BLEND(0.5)); delayedcall(0.01, lookto(1.35,39.16,117.28));" />
+
+
+
 		<hotspot name="hsp_16_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/1_16_0.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.2" alpha="0" ath="5.8715" atv="21.1741" install_onclick="6" phot_h="80" info_ah="1_16_0.png" />
 		<hotspot name="hsp_16_2" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_16_1], onclick);       " alpha="0" alpha2="0" fillcolor="0xE80606" fillalpha="0.69" bordercolor="0xFFEE00" title="판넬보기1" >
 			<point ath="-32.3023" atv="10.2477" /> 
@@ -678,25 +754,32 @@
 			<point ath="29.6837" atv="10.7207" /> 
 			<point ath="30.2376" atv="2.3618" /> 
 		</hotspot>
+	
+		<hotspot name="hsp_15_3" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.5" zorder="-100" ath="3.8961" atv="27.0976" install_onclick="5" />
+		<hotspot name="hsp_15_4" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.5" zorder="-100" ath="-13.6795" atv="6.0696" install_onclick="5" />
 	</scene>
 
 	<scene name="scene_1_17" title="1_17" onstart="hide_logo('logo_1'); show_logo('logo_2'); hide_logo('logo_3');" thumburl="panos/1_17.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+		<view hlookat="1.35" vlookat="39.16" fovtype="MFOV" fov="117.28" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
 		<preview url="panos/1_17.tiles/preview.jpg" />
 
 		<image>
 			<cube url="panos/1_17.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-93.246" atv="41.509" linkedscene="scene_1_16" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="127.536" atv="33.149" linkedscene="scene_1_8" />
-		<hotspot name="spot3" style="skin_hotspotstyle" ath="2.366" atv="74.881" linkedscene="scene_1_14" />
-		
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-93.246" atv="41.509" 
+				onclick="loadscene(scene_1_16, null, null, BLEND(0.5)); delayedcall(0.01, lookto(-0.78,25.70,121.49));" />
 
-	
+		
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="2.366" atv="74.881" 
+		onclick="loadscene(scene_1_14, null, null, BLEND(0.5)); delayedcall(0.01, lookto(7.46,36.64,125.38));" />
+
+
+
+
 		<hotspot name="hsp_17_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/1_17_0.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.1" alpha="0.00" ath="-11.9355" atv="33.1442" install_onclick="6" info_ah="1_17_0.png" phot_h="80" />
 		<hotspot name="hsp_17_2" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_17_1], onclick);       " alpha="0" alpha2="0" title="판넬보기" >
 			<point ath="-35.5679" atv="16.4593" /> 
@@ -707,29 +790,33 @@
 		<hotspot name="hsp_17_3" style="pl_hs_add_hs" >
 			<point ath="-35.1247" atv="27.1373" /> 
 		</hotspot>
+	
+		<hotspot name="hsp_16_5" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.5" zorder="-100" ath="-7.6568" atv="39.2765" install_onclick="5" />
 	</scene>
 
 	<scene name="scene_1_18" title="1_18" onstart="hide_logo('logo_1'); hide_logo('logo_2'); show_logo('logo_3');" thumburl="panos/1_18.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="true" />
 
-		<view hlookat="1080.035" vlookat="4.686" fovtype="MFOV" fov="142.300" maxpixelzoom="2.0" fovmin="42.002774" fovmax="142.3" limitview="auto" hlookatmin="-180.0" hlookatmax="180.0" vlookatmin="-90.0" vlookatmax="90.0"/>
+		<view hlookat="0.70" vlookat="7.22" fovtype="MFOV" fov="136.81" maxpixelzoom="2.0" fovmin="42.002774" fovmax="142.3" limitview="auto" hlookatmin="-180.0" hlookatmax="180.0" vlookatmin="-90.0" vlookatmax="90.0"/>
 
 		<preview url="panos/1_18.tiles/preview.jpg" />
 
 		<image prealign="0.032739|-0.000214|0.749285">
 			<cube url="panos/1_18.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="178.525" atv="26.657" linkedscene="scene_1_19" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="-91.559" atv="23.783" linkedscene="scene_1_15" />
-		<hotspot name="spot3" style="skin_hotspotstyle" ath="93.479" atv="28.003" linkedscene="scene_1_24" />
-		<hotspot name="spot4" style="skin_hotspotstyle" ath="-134.055" atv="25.941" linkedscene="scene_1_13" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="178.525" atv="26.657"
+		onclick="loadscene(scene_1_19, null, null, BLEND(0.5)); delayedcall(0.01, lookto(67.36,7.74,133.78));" />
 
-	
+
+
+		<hotspot name="spot4" style="skin_hotspotstyle" ath="-134.055" atv="25.941"
+		onclick="loadscene(scene_1_13, null, null, BLEND(0.5)); delayedcall(0.01, lookto(-6.67,3.95,132.74));" />
+
+
+
 		<hotspot name="hsp_18_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/1_18_0.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.1" alpha="0.00" ath="-3.5495" atv="26.3620" install_onclick="6" phot_h="80" info_ah="1_18_0.png" />
 		<hotspot name="hsp_18_2" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_18_1], onclick);       " alpha="0" alpha2="0" fillcolor="0xE80606" fillalpha="0.69" bordercolor="0xFFEE00" title="판넬보기" >
-			<point ath="-59.4838" atv="35.5510" /> 
-			<point ath="57.3539" atv="37.3826" /> 
 			<point ath="57.0053" atv="7.4831" /> 
 			<point ath="43.9111" atv="5.1165" /> 
 			<point ath="40.8073" atv="4.6915" /> 
@@ -750,23 +837,28 @@
 			<point ath="-44.3750" atv="4.1049" /> 
 			<point ath="-59.9519" atv="5.6745" /> 
 		</hotspot>
+	
+		<hotspot name="hsp_17_4" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.5" zorder="-100" ath="11.0537" atv="-0.1257" install_onclick="5" />
 	</scene>
 
 	<scene name="scene_1_19" title="1_19" onstart="hide_logo('logo_1'); hide_logo('logo_2'); show_logo('logo_3');" thumburl="panos/1_19.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="true" />
 
-		<view hlookat="1146.721" vlookat="1.611" fovtype="MFOV" fov="142.3" maxpixelzoom="2.0" fovmin="42.002774" fovmax="142.3" limitview="auto" hlookatmin="-180.0" hlookatmax="180.0" vlookatmin="-90.0" vlookatmax="90.0"/>
+		<view hlookat="67.36" vlookat="7.74" fovtype="MFOV" fov="133.78" maxpixelzoom="2.0" fovmin="42.002774" fovmax="142.3" limitview="auto" hlookatmin="-180.0" hlookatmax="180.0" vlookatmin="-90.0" vlookatmax="90.0"/>
 
 		<preview url="panos/1_19.tiles/preview.jpg" />
 
 		<image prealign="-2.04364|-0.008788|-2.047254">
 			<cube url="panos/1_19.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="160.816" atv="26.450" linkedscene="scene_1_18" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="-27.417" atv="29.672" linkedscene="scene_1_20" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="160.816" atv="26.450" 
+		onclick="loadscene(scene_1_18, null, null, BLEND(0.5)); delayedcall(0.01, lookto(0.70,7.22,136.81));" />
 
-	
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-27.417" atv="29.672" 
+		onclick="loadscene(scene_1_20, null, null, BLEND(0.5)); delayedcall(0.01, lookto(-5.05,6.62,129.50));" />
+
+
 		<hotspot name="hsp_19_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/1_19_0.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" alpha="0" ath="70.6593" atv="2.0131" install_onclick="6" phot_h="80" info_ah="1_19_0.png" />
 		<hotspot name="hsp_19_2" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_19_1], onclick);       " alpha="0" alpha2="0" title="판넬보기" >
 			<point ath="70.1101" atv="-47.1726" /> 
@@ -775,23 +867,30 @@
 			<point ath="117.4796" atv="33.1690" /> 
 			<point ath="117.2928" atv="-15.8093" /> 
 		</hotspot>
+	
+		<hotspot name="hsp_18_5" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.5" zorder="-100" ath="66.6944" atv="2.6020" install_onclick="5" />
+		<hotspot name="hsp_18_3" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.5" zorder="-100" ath="8.7511" atv="1.4944" install_onclick="5" />
+		<hotspot name="hsp_18_4" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.5" zorder="-100" ath="8.7511" atv="1.4944" install_onclick="5" />
 	</scene>
 
 	<scene name="scene_1_20" title="1_20" onstart="hide_logo('logo_1'); hide_logo('logo_2'); show_logo('logo_3');" thumburl="panos/1_20.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+		<view hlookat="-5.05" vlookat="6.62" fovtype="MFOV" fov="129.50" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
 		<preview url="panos/1_20.tiles/preview.jpg" />
 
 		<image>
 			<cube url="panos/1_20.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="86.527" atv="39.670" linkedscene="scene_1_19" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="-95.686" atv="49.228" linkedscene="scene_1_21" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="86.527" atv="39.670" 
+		onclick="loadscene(scene_1_19, null, null, BLEND(0.5)); delayedcall(0.01, lookto(67.36,7.74,133.78));" />
 
-	
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-95.686" atv="49.228" 
+		onclick="loadscene(scene_1_21, null, null, BLEND(0.5)); delayedcall(0.01, lookto(1.54,4.48,129.50));" />
+
+
 		<hotspot name="hsp_20_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/1_20_0.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" alpha="0" ath="5.6569" atv="2.0496" install_onclick="6" phot_h="80" info_ah="1_20_0.png" />
 		<hotspot name="hsp_20_3" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/1_20_1.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.5" alpha="0" ath="-95.6973" atv="-10.7175" install_onclick="6" phot_h="80" info_ah="1_20_1.png" />
 		<hotspot name="hsp_20_2" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_20_1], onclick);       " alpha="0" alpha2="0" title="판넬보기1" >
@@ -807,23 +906,31 @@
 			<point ath="-81.7684" atv="-2.5371" /> 
 			<point ath="-82.3080" atv="-20.9189" /> 
 		</hotspot>
+	
+		<hotspot name="hsp_19_6" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.5" zorder="-100" ath="-87.7145" atv="-14.4680" install_onclick="5" />
+		<hotspot name="hsp_19_5" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.5" zorder="-100" ath="-9.4327" atv="-1.0501" install_onclick="5" />
+		<hotspot name="hsp_19_3" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.5" zorder="-100" ath="67.6696" atv="1.4943" install_onclick="5" />
+		<hotspot name="hsp_19_4" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.5" zorder="-100" ath="66.6944" atv="2.6020" install_onclick="5" />
 	</scene>
 
 	<scene name="scene_1_21" title="1_21" onstart="hide_logo('logo_1'); hide_logo('logo_2'); show_logo('logo_3');" thumburl="panos/1_21.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="true" />
 
-		<view hlookat="1082.891" vlookat="2.766" fovtype="MFOV" fov="139.281" maxpixelzoom="2.0" fovmin="42.002774" fovmax="142.3" limitview="auto" hlookatmin="-180.0" hlookatmax="180.0" vlookatmin="-90.0" vlookatmax="90.0"/>
+		<view hlookat="1.54" vlookat="4.48" fovtype="MFOV" fov="129.50" maxpixelzoom="2.0" fovmin="42.002774" fovmax="142.3" limitview="auto" hlookatmin="-180.0" hlookatmax="180.0" vlookatmin="-90.0" vlookatmax="90.0"/>
 
 		<preview url="panos/1_21.tiles/preview.jpg" />
 
 		<image prealign="-3.227421|-0.144239|-2.138391">
 			<cube url="panos/1_21.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-119.675" atv="43.477" linkedscene="scene_1_22" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="97.788" atv="18.997" linkedscene="scene_1_20" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-119.675" atv="43.477" 
+		onclick="loadscene(scene_1_22, null, null, BLEND(0.5)); delayedcall(0.01, lookto(-15.65,4.81,133.74));" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="97.788" atv="18.997"
+		onclick="loadscene(scene_1_20, null, null, BLEND(0.5)); delayedcall(0.01, lookto(-5.05,6.62,129.50));" />
 
-	
+
+
 		<hotspot name="hsp_21_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/1_21_0.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.5" alpha="0" ath="30.9591" atv="-18.6139" install_onclick="6" info_ah="1_21_0.png" phot_h="80" />
 		<hotspot name="hsp_21_3" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/1_21_1.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.5" alpha="0" ath="-31.9540" atv="-5.9838" install_onclick="6" phot_h="80" info_ah="1_21_1.png" />
 		<hotspot name="hsp_21_2" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_21_1], onclick);       " alpha="0" alpha2="0" title="판넬보기1" >
@@ -845,23 +952,29 @@
 			<point ath="48.0000" atv="-24.7797" /> 
 		</hotspot>
 		<hotspot name="hsp_21_5" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/1_21_2.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.2" zorder="100" alpha="0" ath="40.9510" atv="-25.1496" install_onclick="6" info_ah="1_21_2.png" phot_h="80" />
+	
+		<hotspot name="hsp_20_6" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.5" zorder="-100" ath="29.7710" atv="-26.2377" install_onclick="5" />
+		<hotspot name="hsp_20_5" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.5" zorder="-100" ath="-87.7145" atv="-14.4680" install_onclick="5" />
+		<hotspot name="hsp_20_7" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.5" zorder="-100" ath="-22.7440" atv="-9.7895" install_onclick="5" />
 	</scene>
 
 	<scene name="scene_1_22" title="1_22" onstart="hide_logo('logo_1'); hide_logo('logo_2'); show_logo('logo_3');" thumburl="panos/1_22.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
-		<view hlookat="1064.136" vlookat="0.820" fovtype="MFOV" fov="142.300" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+		<view hlookat="-15.65" vlookat="4.81" fovtype="MFOV" fov="133.74" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
 		<preview url="panos/1_22.tiles/preview.jpg" />
 
 		<image>
 			<cube url="panos/1_22.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="75.987" atv="32.098" linkedscene="scene_1_21" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="-109.074" atv="30.568" linkedscene="scene_1_23" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="75.987" atv="32.098" 
+		onclick="loadscene(scene_1_21, null, null, BLEND(0.5)); delayedcall(0.01, lookto(1.54,4.48,129.50));" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-109.074" atv="30.568" 
+		onclick="loadscene(scene_1_23, null, null, BLEND(0.5)); delayedcall(0.01, lookto(-4.36,1.46,133.74));" />
 
-	
+
 		<hotspot name="hsp_22_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/1_22_0.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.2" alpha="0" ath="-14.8315" atv="-3.8530" install_onclick="6" info_ah="1_22_0.png" phot_h="80" />
 		<hotspot name="hsp_22_2" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_22_1], onclick);       " alpha="0" alpha2="0" title="판넬보기" >
 			<point ath="-15.9047" atv="-54.6744" /> 
@@ -870,24 +983,28 @@
 			<point ath="35.0205" atv="35.3838" /> 
 			<point ath="34.5928" atv="-25.9290" /> 
 		</hotspot>
+	
+		<hotspot name="hsp_21_7" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.5" zorder="-100" ath="-2.8916" atv="1.1016" install_onclick="5" />
 	</scene>
 
 	<scene name="scene_1_23" title="1_23" onstart="hide_logo('logo_1'); hide_logo('logo_2'); show_logo('logo_3');" thumburl="panos/1_23.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="true" />
 
-		<view hlookat="1076.796" vlookat="0.000" fovtype="MFOV" fov="142.300" maxpixelzoom="2.0" fovmin="42.002774" fovmax="142.3" limitview="auto" hlookatmin="-180.0" hlookatmax="180.0" vlookatmin="-90.0" vlookatmax="90.0"/>
+		<view hlookat="-4.36" vlookat="1.46" fovtype="MFOV" fov="133.74" maxpixelzoom="2.0" fovmin="42.002774" fovmax="142.3" limitview="auto" hlookatmin="-180.0" hlookatmax="180.0" vlookatmin="-90.0" vlookatmax="90.0"/>
 
 		<preview url="panos/1_23.tiles/preview.jpg" />
 
 		<image prealign="-0.04369|0.000534|1.399318">
 			<cube url="panos/1_23.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="70.912" atv="39.749" linkedscene="scene_1_22" />
-		
-		<hotspot name="spot3" style="skin_hotspotstyle" ath="-77.743" atv="42.282" linkedscene="scene_1_24" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="86.66" atv="42.934" 
+		onclick="loadscene(scene_1_22, null, null, BLEND(0.5)); delayedcall(0.01, lookto(-15.65,4.81,133.74));" />
 
-	
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="-94.819" atv="53.43" 
+		onclick="loadscene(scene_1_24, null, null, BLEND(0.5)); delayedcall(0.01, lookto(-24.47,9.56,127.26));" />
+
+
 		<hotspot name="hsp_23_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/1_23_0.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.2" alpha="0" ath="2.2791" atv="-14.5652" install_onclick="6" phot_h="80" info_ah="1_23_0.png" />
 		<hotspot name="hsp_23_3" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/1_23_1.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.5" alpha="0" ath="37.5442" atv="14.9291" install_onclick="6" phot_h="80" info_ah="1_23_1.png" />
 		<hotspot name="hsp_23_5" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/1_23_2.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.2" alpha="0" ath="-29.1356" atv="18.8024" install_onclick="6" phot_h="80" info_ah="1_23_2.png" />
@@ -909,25 +1026,33 @@
 			<point ath="6.1981" atv="3.8641" /> 
 			<point ath="-53.8535" atv="2.7825" /> 
 		</hotspot>
+	
+		<hotspot name="hsp_22_3" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.5" zorder="-100" ath="-36.8868" atv="15.0592" install_onclick="5" />
+		<hotspot name="hsp_22_4" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.5" zorder="-100" ath="12.0254" atv="-15.4531" install_onclick="5" />
+		<hotspot name="hsp_22_5" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.5" zorder="-100" ath="35.7034" atv="12.1793" install_onclick="5" />
 	</scene>
 
 	<scene name="scene_1_24" title="1_24" onstart="hide_logo('logo_1'); hide_logo('logo_2'); show_logo('logo_3');" thumburl="panos/1_24.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="true" />
 
-		<view hlookat="-23.314" vlookat="2.823" fovtype="MFOV" fov="142.3" maxpixelzoom="2.0" fovmin="42.002774" fovmax="142.3" limitview="fullrange" hlookatmin="-180.0" hlookatmax="180.0" vlookatmin="-90.0" vlookatmax="90.0"/>
+		<view hlookat="-24.47" vlookat="9.56" fovtype="MFOV" fov="127.26" maxpixelzoom="2.0" fovmin="42.002774" fovmax="142.3" limitview="fullrange" hlookatmin="-180.0" hlookatmax="180.0" vlookatmin="-90.0" vlookatmax="90.0"/>
 
 		<preview url="panos/1_24.tiles/preview.jpg" />
 
 		<image prealign="-3.126568|0.074387|1.323632">
 			<cube url="panos/1_24.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="175.121" atv="23.852" linkedscene="scene_1_18" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="-108.432" atv="24.464" linkedscene="scene_1_25" />
-		<hotspot name="spot3" style="skin_hotspotstyle" ath="61.935" atv="29.844" linkedscene="scene_1_26" />
-		<hotspot name="spot4" style="skin_hotspotstyle" ath="118.229" atv="25.988" linkedscene="scene_1_23" />
+		
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-108.432" atv="24.464"
+		onclick="loadscene(scene_1_25, null, null, BLEND(0.5)); delayedcall(0.01, lookto(-1.57,17.17,126.07));" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="61.935" atv="29.844"
+		onclick="loadscene(scene_1_26, null, null, BLEND(0.5)); delayedcall(0.01, lookto(2.65,1.82,120.12));" />
+		<hotspot name="spot4" style="skin_hotspotstyle" ath="118.229" atv="25.988"
+		onclick="loadscene(scene_1_23, null, null, BLEND(0.5)); delayedcall(0.01, lookto(-4.36,1.46,133.74));" />
 
-	
+
+
 		<hotspot name="hsp_24_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/1_24_0.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.5" alpha="0" ath="-43.9741" atv="-3.6231" install_onclick="6" phot_h="80" info_ah="1_24_0.png" />
 		<hotspot name="hsp_24_2" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_24_1], onclick);       " alpha="0" alpha2="0" title="판넬보기1" >
 			<point ath="-58.4609" atv="-12.5472" /> 
@@ -942,22 +1067,27 @@
 			<point ath="29.7071" atv="5.8637" /> 
 		</hotspot>
 		<hotspot name="hsp_24_3" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/1_24_1.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.2" zorder="100" alpha="0" ath="15.3008" atv="-4.2308" install_onclick="6" phot_h="80" info_ah="1_24_1.png" />
+	
+		<hotspot name="hsp_23_7" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.5" zorder="-100" ath="-38.4071" atv="-3.3528" install_onclick="5" />
+		<hotspot name="hsp_23_8" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" scale="0.5" zorder="-100" ath="14.2813" atv="-0.4417" install_onclick="5" />
 	</scene>
 
 	<scene name="scene_1_25" title="1_25" onstart="hide_logo('logo_1'); hide_logo('logo_2'); show_logo('logo_3');" thumburl="panos/1_25.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
-		<view hlookat="357.419" vlookat="7.679" fovtype="MFOV" fov="140.000" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
+		<view hlookat="-1.57" vlookat="17.17" fovtype="MFOV" fov="126.07" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
 		<preview url="panos/1_25.tiles/preview.jpg" />
 
 		<image>
 			<cube url="panos/1_25.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-4.114" atv="50.926" linkedscene="scene_1_24" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="-4.114" atv="50.926"
+		onclick="loadscene(scene_1_24, null, null, BLEND(0.5)); delayedcall(0.01, lookto(-24.47,9.56,127.26));" />
 
-	
+
+
 		<hotspot name="hsp_25_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/1_25_1_1.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.1" alpha="0" ath="-6.0618" atv="35.5273" install_onclick="6" phot_h="80" info_ah="1_25_1_1.png" />
 		<hotspot name="hsp_25_2" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_25_1], onclick);       " alpha="0" alpha2="0" fillalpha="0.5009416703993622" title="판넬보기" >
 			<point ath="-53.5710" atv="16.9902" /> 
@@ -965,6 +1095,8 @@
 			<point ath="72.5479" atv="15.7713" /> 
 			<point ath="53.0243" atv="15.6051" /> 
 		</hotspot>
+	
+		<hotspot name="hsp_24_5" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" width="100.00" scale="0.5" zorder="-100" ath="-8.5787" atv="39.5284" install_onclick="5" />
 	</scene>
 
 	<scene name="scene_1_26" title="1_26" onstart="hide_logo('logo_1'); hide_logo('logo_2'); show_logo('logo_3');" thumburl="panos/1_26.tiles/thumb.jpg" lat="" lng="" heading="">
@@ -978,11 +1110,13 @@
 		<image prealign="0|1.0590398209465093|0">
 			<cube url="panos/1_26.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="85.933" atv="29.730" linkedscene="scene_1_24" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="-178.528" atv="40.188" linkedscene="scene_1_28" />
-		<hotspot name="spot3" style="skin_hotspotstyle" ath="-83.259" atv="24.518" linkedscene="scene_1_27" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="85.933" atv="29.730"
+		onclick="loadscene(scene_1_24, null, null, BLEND(0.5)); delayedcall(0.01, lookto(-24.47,9.56,127.26));" />
+		<hotspot name="spot3" style="skin_hotspotstyle" ath="-134.989" atv="40.844" 
+		onclick="loadscene(scene_1_27, null, null, BLEND(0.5)); delayedcall(0.01, lookto(330.97,7.46,120.12));" />
 
-	
+
+
 		<hotspot name="hsp_26_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/1_25_0.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.2" alpha="0" ath="-18.3430" atv="3.3262" install_onclick="6" info_ah="1_25_0.png" phot_h="80" />
 		<hotspot name="hsp_26_2" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_26_1], onclick);       " alpha="0" handcursor="false" alpha2="0" fillcolor="0x000000" fillalpha="0" borderwidth="0" bordercolor="0x000000" borderalpha="0" title="판넬보기" >
 			<point ath="0.2487" atv="-41.7473" /> 
@@ -991,21 +1125,26 @@
 			<point ath="49.1479" atv="27.5976" /> 
 			<point ath="47.1082" atv="-17.7039" /> 
 		</hotspot>
+	
+		<hotspot name="hsp_25_3" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" width="100.00" scale="0.5" zorder="-100" ath="17.4432" atv="0.6510" install_onclick="5" />
 	</scene>
 
 	<scene name="scene_1_27" title="1_27" onstart="hide_logo('logo_1'); hide_logo('logo_2'); show_logo('logo_3');" thumburl="panos/1_27.tiles/thumb.jpg" lat="" lng="" heading="">
 		
 		<control bouncinglimits="true" />
 
-		<view hlookat="1412.749" vlookat="0.000" fovtype="MFOV" fov="142.300" maxpixelzoom="2.0" fovmin="42.002774" fovmax="142.3" limitview="auto" hlookatmin="-180.0" hlookatmax="180.0" vlookatmin="-90.0" vlookatmax="90.0"/>
+		<view hlookat="330.97" vlookat="7.46" fovtype="MFOV" fov="120.12" maxpixelzoom="2.0" fovmin="42.002774" fovmax="142.3" limitview="auto" hlookatmin="-180.0" hlookatmax="180.0" vlookatmin="-90.0" vlookatmax="90.0"/>
 
 		<preview url="panos/1_27.tiles/preview.jpg" />
 
 		<image prealign="0|0|0">
 			<cube url="panos/1_27.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="7.633" atv="33.729" linkedscene="scene_1_26" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="80.744" atv="23.587" linkedscene="scene_1_28" />
+		<hotspot name="spot1" style="skin_hotspotstyle" ath="7.633" atv="33.729"
+		onclick="loadscene(scene_1_26, null, null, BLEND(0.5)); delayedcall(0.01, lookto(2.65,1.82,120.12));" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="80.744" atv="23.587" 
+		onclick="loadscene(scene_1_28, null, null, BLEND(0.5)); delayedcall(0.01, lookto(356.06,3.01,139.32));" />
+
 
 	</scene>
 
@@ -1013,17 +1152,18 @@
 		
 		<control bouncinglimits="true" />
 
-		<view hlookat="1438.630" vlookat="0.000" fovtype="MFOV" fov="130.0" maxpixelzoom="2.0" fovmin="42.002774" fovmax="130.0" limitview="auto" hlookatmin="-180.0" hlookatmax="180.0" vlookatmin="-90.0" vlookatmax="90.0"/>
+		<view hlookat="356.06" vlookat="3.01" fovtype="MFOV" fov="139.32" maxpixelzoom="2.0" fovmin="42.002774" fovmax="130.0" limitview="auto" hlookatmin="-180.0" hlookatmax="180.0" vlookatmin="-90.0" vlookatmax="90.0"/>
 
 		<preview url="panos/1_28.tiles/preview.jpg" />
 
 		<image prealign="0|0|0">
 			<cube url="panos/1_28.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-17.003" atv="25.999" linkedscene="scene_1_26" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="-90.301" atv="22.341" linkedscene="scene_1_27" />
+		<hotspot name="spot2" style="skin_hotspotstyle" ath="-90.9" atv="20.536" 
+		onclick="loadscene(scene_1_27, null, null, BLEND(0.5)); delayedcall(0.01, lookto(330.97,7.46,120.12));" />
 
-	
+
+
 		<hotspot name="hsp_28_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/1_28_0.png);" url="%FIRSTXML%/add_hotspot/plugins_l/picture/icon_L_1.png" scale="0.5" alpha="0" ath="1.6680" atv="-2.5792" install_onclick="6" phot_h="80" info_ah="1_28_0.png" />
 		<hotspot name="hsp_28_2" style="pl_hs_add_hs" onhover="showtit();" onclick="callwith(hotspot[hsp_28_1], onclick);       " alpha="0" alpha2="0" fillcolor="0xCE0523" fillalpha="0.6671222900157189" bordercolor="0xFFD600" title="판넬보기" >
 			<point ath="-1.8150" atv="-50.2393" /> 
@@ -1032,6 +1172,8 @@
 			<point ath="49.4343" atv="33.0428" /> 
 			<point ath="46.4910" atv="-25.9459" /> 
 		</hotspot>
+	
+		<hotspot name="hsp_27_1" style="link_hs_sm" url="%FIRSTXML%/add_hotspot/picture/item.png" width="100.00" scale="0.5" zorder="-100" ath="-14.0291" atv="-32.6520" install_onclick="5" />
 	</scene>
 
 	<include url="plugins/garrows/garrows_settings.xml" />
