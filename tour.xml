@@ -25,7 +25,7 @@
 		<layer name="intro_logo"
 			   enabled ="false"
 		       onclick="on_intro_click()"
-			 url="images/poster.jpg" align="center" y="20" scale="0.7"/>
+			 url="images/poster.jpg" align="center" y="20" scale="0.8"/>
 
 	</layer>
 
@@ -44,9 +44,9 @@
 		set(layer[%1].visible, false);
 	</action>
 
-	<layer name="logo_1" url="images/logo_1.png" align="righttop" x="2" y="2" scale="0.05" keep="true" />
-	<layer name="logo_2" url="images/logo_2.png" align="righttop" x="2" y="2" scale="0.05" keep="true" />
-	<layer name="logo_3" url="images/logo_3.png" align="righttop" x="2" y="2" scale="0.05" keep="true" />
+	<layer name="logo_1" url="images/logo_1.png" align="righttop" x="2" y="2" scale="0.04" keep="true" />
+	<layer name="logo_2" url="images/logo_2.png" align="righttop" x="2" y="2" scale="0.04" keep="true" />
+	<layer name="logo_3" url="images/logo_3.png" align="righttop" x="2" y="2" scale="0.04" keep="true" />
 
 
 
@@ -478,7 +478,7 @@
 		onclick="loadscene(scene_1_8, null, null, BLEND(0.5)); delayedcall(0.01, lookto(-64.98,30.28,121.30));" />
 
 		<hotspot name="spot2" style="skin_hotspotstyle" ath="-90.031" atv="46.253"
-		onclick="loadscene(scene_1_10, null, null, BLEND(0.5)); delayedcall(0.01, lookto(-1.06,3.05,103.75));" />
+		onclick="loadscene(scene_1_10, null, null, BLEND(0.5)); delayedcall(0.01, lookto(-1.06,3.05,135.75));" />
 
 
 		<hotspot name="hsp_9_1" style="link_hs_sm" onclick=" open_photo_add_hs(%FIRSTXML%/add_hotspot/photo/1_9_0.png);" url="%FIRSTXML%/add_hotspot/picture/info.png" scale="0.4" alpha="0" ath="1.7467" atv="28.6503" install_onclick="6" phot_h="80" info_ah="1_9_0.png" />
@@ -496,7 +496,7 @@
 
 		<control bouncinglimits="true" />
 
-		<view hlookat="-1.06" vlookat="3.05" fovtype="MFOV" fov="103.75" maxpixelzoom="2.0" fovmin="42.002774" fovmax="142.3" limitview="auto" hlookatmin="-180.0" hlookatmax="180.0" vlookatmin="-90.0" vlookatmax="90.0"/>
+		<view hlookat="-1.06" vlookat="3.05" fovtype="MFOV" fov="135.75" maxpixelzoom="2.0" fovmin="42.002774" fovmax="142.3" limitview="auto" hlookatmin="-180.0" hlookatmax="180.0" vlookatmin="-90.0" vlookatmax="90.0"/>
 
 		<preview url="panos/1_10.tiles/preview.jpg" />
 
@@ -547,7 +547,7 @@
 			<cube url="panos/1_11.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,640,1280,2560" />
 		</image>
 		<hotspot name="spot1" style="skin_hotspotstyle" ath="85.473" atv="42.173"
-		onclick="loadscene(scene_1_10, null, null, BLEND(0.5)); delayedcall(0.01, lookto(-1.06,3.05,103.75));" />
+		onclick="loadscene(scene_1_10, null, null, BLEND(0.5)); delayedcall(0.01, lookto(-1.06,3.05,135.75));" />
 		<hotspot name="spot2" style="skin_hotspotstyle" ath="-91.382" atv="46.968"
 		onclick="loadscene(scene_1_12, null, null, BLEND(0.5)); delayedcall(0.01, lookto(-6.19,12.92,129.05));" />
 

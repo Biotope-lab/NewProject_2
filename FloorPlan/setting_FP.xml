@@ -61,7 +61,7 @@
 
 	
 	<!--  Plan Container  -->
-	<layer name="cont_fp_all" style="cont_fp" capturewheel="false" height="162" x="60" y="41" edge="righttop" start_x="60" start_y="41" />
+	<layer name="cont_fp_all" style="cont_fp" capturewheel="false" height="162" x="60" y="41" align="leftbottom" edge="leftbottom" start_x="60" start_y="41" />
 	
 	<!--  Container of plans and buttons  -->
 	<layer name="plan_cont_fp2" style="cont_fp2" capturewheel="false" bgborder="1,1,1,1 0xFFFFFF 1.00" bgroundedge="4 4 4 4" bgshadow="0 1 13 0x000000 0.40" bgcolor="0x00" bgalpha="0.24" />
